@@ -1,0 +1,46 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+        
+        <bean id ="question1" class="com.DegreedSpringCore.demo.Question2.Question">
+        		<property name="questionId" value="1"/>
+        		<property name="question" value ="Explain features of Spring Core"/>
+        		<property name="answersList">
+       		 <list>
+       			 <value>You can use it for all layers of application development</value>
+       			 <value>The Spring model is quite light considering it is based on the POJO formula</value>
+        		 <value>It supports loose coupling and easy testing</value>
+       	 	 </list>
+        		</property>
+        </bean>
+       	<bean id = "Question2" class= "com.DegreedSpringCore.demo.Question2.Question">
+      				 <property name="questionId" value="1"/>
+       				 <property name="question" value ="State any three disadvantages of Spring Core"/>
+       				 <property name="answersMap">
+       				 <map>
+       				 <entry key ="1" value="Steep Learning Curve"></entry>
+       				 <entry key ="2" value ="Complexity"></entry>
+       				 <entry key ="3" value ="Dependency Management"></entry>
+       				 </map>
+       				 </property>
+       	</bean>
+       	<bean id ="question3" class ="com.DegreedSpringCore.demo.Question2.Question">
+       	 			<property name="questionId" value="1"/>
+       				<property name="question" value ="What organizations use Spring Core"/>
+       				<property name="answersSet">
+       				<set>
+       				<value>Netflix</value>
+       				<value>Amazon</value>
+       				<value>Spotify</value>
+       				</set>
+       				</property>
+       	</bean>
+        
+        
+        
+        
+        
+        
+        </beans>

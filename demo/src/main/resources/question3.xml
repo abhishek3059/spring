@@ -1,0 +1,51 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+        
+        <bean id ="account1" class= "com.DegreedSpringCore.demo.Question3.BankAccount">
+        		<property name="accountId" value ="324342343"/>
+        		<property name = "accountHolderName" value = "Kunal" />
+        		<property name = "accountType" value = "Saving Account" />
+        		<property name = "accountBalance" value = "2000" />
+        
+        </bean>
+        <bean id = "account2" class = "com.DegreedSpringCore.demo.Question3.BankAccount">
+        		<property name = "accountId" value = "324485568" />
+        		<property name = "accountHolderName" value = "Abhishek" />
+        		<property name = "accountType" value = "Savings Account" />
+        		<property name = "accountBalance" value = "10000" />
+        </bean>
+         <bean id = "account3" class = "com.DegreedSpringCore.demo.Question3.BankAccount">
+        		<property name = "accountId" value = "45677989" />
+        		<property name = "accountHolderName" value = "John" />
+        		<property name = "accountType" value = "Current Account" />
+        		<property name = "accountBalance" value = "10000000" />
+        </bean>
+        <bean id ="repo" class = "com.DegreedSpringCore.demo.Question3.BankAccountepositoryImpl">
+        		<property name = "accountObjs" >
+        		<list>
+        			<ref bean = "account1" />
+        			<ref bean = "account2" />
+        			<ref bean = "account3" />
+        		</list>
+        		</property>
+        </bean>
+        <bean id = "serviceImp" class = "com.DegreedSpringCore.demo.Question3.BankAccountServiceImpl">
+        <property name = "bankAccountRepository" ref = "repo"/>
+        </bean>
+        <bean id = "controller" class = "com.DegreedSpringCore.demo.Question3.BankAccountController">
+        <property name = "bankAccountService" ref = "serviceImp"/>
+        </bean>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </beans>

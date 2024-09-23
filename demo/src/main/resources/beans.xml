@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+<bean id="Address1" class="com.DegreedSpringCore.demo.Question1.Address">
+<property name="street" value="Fashion Street 1-A"/>
+<property name="city" value="Mumbai"/>
+<property name="state" value="Maharashtra"/>
+<property name="zipCode" value="400003"/>
+<property name="country" value="India"/>
+</bean>
+<bean id="Address2" class="com.DegreedSpringCore.demo.Question1.Address">
+<property name="street" value="Shivaji Nagar"/>
+<property name="city" value="Pune"/>
+<property name="state" value="Maharashtra"/>
+<property name="zipCode" value="411003"/>
+<property name="country" value="India"/>
+</bean>
+<bean id ="Customer1" class = "com.DegreedSpringCore.demo.Question1.Customer">
+<property name="custId" value ="1"/>
+<property name="custName" value ="Abhishek"/>
+<property name="custCont" value ="7498477839"/>
+<property name="custAddress" ref ="Address1"/>
+</bean>
+<bean id ="Customer2" class = "com.DegreedSpringCore.demo.Question1.Customer">
+<property name="custId" value ="2"/>
+<property name="custName" value ="John"/>
+<property name="custCont" value ="9882001824"/>
+<property name="custAddress" ref ="Address2"/>
+</bean>
+
+<bean id ="CustomerIntegration" class = "com.DegreedSpringCore.demo.Question1.CustomerIntegration">
+	<constructor-arg>
+	<list>
+	  <ref bean ="Customer1"/>
+	  <ref bean ="Customer2"/>
+	</list>
+	</constructor-arg>
+</bean>
+
+
+
+
+
+
+
+</beans>
